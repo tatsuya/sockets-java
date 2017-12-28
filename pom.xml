@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.tatsuyaoiw</groupId>
-    <artifactId>jcip</artifactId>
+    <artifactId>sockets-java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <build>
