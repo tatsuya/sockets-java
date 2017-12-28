@@ -1,4 +1,4 @@
-package com.tatsuyaoiw;
+package com.tatsuyaoiw.sockets;
 
 import java.io.BufferedReader;
 import java.io.IOException;
