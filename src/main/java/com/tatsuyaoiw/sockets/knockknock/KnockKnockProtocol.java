@@ -1,4 +1,4 @@
-package com.tatsuyaoiw.sockets;
+package com.tatsuyaoiw.sockets.knockknock;
 
 public class KnockKnockProtocol {
 
