@@ -24,9 +24,9 @@ public class EchoClient {
              PrintWriter out = new PrintWriter(echoSocket.getOutputStream(), true);
              BufferedReader in = new BufferedReader(new InputStreamReader(echoSocket.getInputStream()));
              BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in))) {
-            String userInput;
             // The loop reads a line at a time from the standard input stream and immediately sends it to the server by
             // writing it to the PrintWriter connected to the socket.
+            String userInput;
             while ((userInput = stdIn.readLine()) != null) {
                 out.println(userInput);
                 System.out.println(format("echo: %s", in.readLine()));
