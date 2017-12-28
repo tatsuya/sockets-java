@@ -21,11 +21,20 @@ public class EchoClient {
         int portNumber = Integer.parseInt(args[1]);
 
         try (Socket echoSocket = new Socket(hostName, portNumber);
+             // If automatic flushing is enabled it will be done only when one of the println, printf, or format methods
+             // is invoked, rather than whenever a newline character happens to be output.
              PrintWriter out = new PrintWriter(echoSocket.getOutputStream(), true);
              BufferedReader in = new BufferedReader(new InputStreamReader(echoSocket.getInputStream()));
              BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in))) {
-            // The loop reads a line at a time from the standard input stream and immediately sends it to the server by
-            // writing it to the PrintWriter connected to the socket.
+            // The while loop reads a line at a time from the standard input stream and immediately sends it to the
+            // server by writing it to the PrintWriter connected to the socket.
+            //
+            // The while loop continues until the user types an end-of-input character. The while loop then terminates,
+            // and the Java runtime automatically closes the readers and writers connected to the socket and to the
+            // standard input stream, and it closes the socket connection to the server. The Java runtime closes these
+            // resources automatically because they were created in the try-with-resources statement. The Java runtime
+            // closes these resources in reverse order that they were created. (This is good because streams connected
+            // to a socket should be closed before the socket itself is closed.)
             String userInput;
             while ((userInput = stdIn.readLine()) != null) {
                 out.println(userInput);
