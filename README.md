@@ -1,4 +1,6 @@
-# All About Sockets
+# sockets-java
+
+Personal note and code examples from [Lesson: All About Sockets](https://docs.oracle.com/javase/tutorial/networking/sockets/index.html).
 
 ## What is Socket?
 
